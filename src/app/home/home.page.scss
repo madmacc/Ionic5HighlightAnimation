@@ -1,0 +1,45 @@
+@keyframes highlight-add {
+  0% {
+    --background: #85dee7;
+    background-color: #85dee7;
+    opacity: 0.3;
+  }
+  30% {
+    --background: #85dee7;
+    background-color: #85dee7;
+    opacity: 1;
+  }
+  100% {
+    --background: #fff;
+    // background-color: #fff;
+  }
+}
+
+// @-webkit-keyframes highlight-add {
+//   0% {
+//     --background: #cbf1f5;
+//     background-color: #cbf1f5;
+//     opacity: 0.3;
+//   }
+//   30% {
+//     --background: #cbf1f5;
+//     background-color: #cbf1f5;
+//     opacity: 1;
+//   }
+//   100% {
+//     --background: #fff;
+//     background-color: #fff;
+//   }
+// }
+
+.student-item-animate {
+  -webkit-animation: highlight-add linear 3s; 
+  // -webkit-animation-name: highlight-add; 
+  // -webkit-animation-duration: 3s; 
+  animation: highlight-add linear 3s;
+}
+.student-div {
+  margin: 0;
+  height: 50px!important;
+  border: 1px solid #c2c2c2;
+}

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Animation Example</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content forceOverscroll="false">
+  <div class="ion-padding-start ion-padding-end">
+    <p >
+      If you add an ion-item the animation is not the same as the div.  The div animation is the expected outcome.
+      Also this animation does not fully work in iOS / Safari only the opacity works.
+    </p>
+    <ion-button color="danger" (click)="onReset()">Reset</ion-button>
+    <ion-button color="primary" (click)="onAddIonItem()">Add ion-item</ion-button>
+    <ion-button color="primary" (click)="onAddDiv()">Add div</ion-button>
+  </div>
+  
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let student of students" class="student-item" detail="false" button="true" #slidingItem>
+      <ion-item [ngClass]="{'student-item-animate': student.isNew}">
+        <ion-icon slot="start" class="icon" [ngClass]="{'gender-female': student.gender === 'Female', 'gender-male': student.gender === 'Male'}" name="person-circle-outline"></ion-icon>
+        <div>
+          <p>{{student.name}}</p>
+        </div>
+    </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+
+  <div *ngFor="let student of studentsDiv" class="student-div" [ngClass]="{'student-item-animate': student.isNew}">
+      {{student.name}}
+  </div>
+</ion-content>
